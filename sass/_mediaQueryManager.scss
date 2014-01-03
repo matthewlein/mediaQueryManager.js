@@ -11,16 +11,16 @@
     left: -999em;
 
     z-index: 1;
-    font-family: 'palm';
+    font-family: palm;
 
     @include breakpoint('lap') {
         z-index: 2;
-        font-family: 'lap';
+        font-family: lap;
     }
 
     @include breakpoint('desk') {
         z-index: 3;
-        font-family: 'desk';
+        font-family: desk;
     }
 
 }

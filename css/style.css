@@ -343,15 +343,15 @@ table {
   top: -999em;
   left: -999em;
   z-index: 1;
-  font-family: 'palm'; }
+  font-family: palm; }
   @media only screen and (min-width: 500px) {
     .state-indicator {
       z-index: 2;
-      font-family: 'lap'; } }
+      font-family: lap; } }
   @media only screen and (min-width: 979px) {
     .state-indicator {
       z-index: 3;
-      font-family: 'desk'; } }
+      font-family: desk; } }
 
 body {
   background-color: #fff; }
