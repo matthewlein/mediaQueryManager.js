@@ -1,0 +1,26 @@
+// ********************************************************************* //
+//
+// Media Query Manager
+//   breakpoints defined in _breakpoint.scss
+//
+// ********************************************************************* //
+
+.state-indicator {
+    position: absolute;
+    top: -999em;
+    left: -999em;
+
+    z-index: 1;
+    font-family: 'palm';
+
+    @include breakpoint('lap') {
+        z-index: 2;
+        font-family: 'lap';
+    }
+
+    @include breakpoint('desk') {
+        z-index: 3;
+        font-family: 'desk';
+    }
+
+}

@@ -1,0 +1,9 @@
+body {
+    background-color: #fff;
+    @include breakpoint('lap') {
+        background-color: #eee;
+    }
+    @include breakpoint('desk') {
+        background-color: #ddd;
+    }
+}
