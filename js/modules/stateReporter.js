@@ -24,7 +24,7 @@ define('stateReporter', function(require) {
         $body = $('body');
         $reporter = $('<div>', {
             id : 'state-reporter'
-        })
+        });
 
         // add the reporter
         $body.append($reporter);
@@ -40,4 +40,4 @@ define('stateReporter', function(require) {
         });
     });
 
-})
+});
