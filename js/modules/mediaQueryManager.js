@@ -17,6 +17,19 @@ define('mediaQueryManager', function(require) {
     // used to store the device state
     var $stateIndicator;
 
+    // gets the current device state
+    // returns a level:Number and name:String
+    function getDeviceState() {
+
+        var z = parseInt( $stateIndicator.css('zIndex'), 10 );
+        var breakpoint = $stateIndicator.css('fontFamily');
+
+        return {
+            level : z,
+            name : breakpoint
+        };
+    }
+
     $(document).ready(function() {
 
         var $body = $('body');
@@ -54,17 +67,6 @@ define('mediaQueryManager', function(require) {
         );
 
     });
-
-    function getDeviceState() {
-
-        var z = parseInt( $stateIndicator.css('zIndex'), 10 );
-        var breakpoint = $stateIndicator.css('fontFamily');
-
-        return {
-            level : z,
-            name : breakpoint
-        };
-    }
 
     // return getDeviceState() so you can grab it anytime
     return getDeviceState;
