@@ -1,6 +1,6 @@
 
 requirejs.config({
-    baseUrl: '/js/modules/',
+    baseUrl: 'js/modules/',
     // I JUST NEED MORE TIME, REQUIRE!!
     waitSeconds: 45,
     paths: {
