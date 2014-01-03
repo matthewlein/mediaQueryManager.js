@@ -15,14 +15,14 @@ define('mediaQueryManager', function(require) {
     require('jquery.debounce');
 
     // used to store the device state
-    var $stateIndicator;
+    var $mqIndicator;
 
     // gets the current device state
     // returns a level:Number and name:String
-    function getDeviceState() {
+    function getMediaQueryState() {
 
-        var z = parseInt( $stateIndicator.css('zIndex'), 10 );
-        var breakpoint = $stateIndicator.css('fontFamily');
+        var z = parseInt( $mqIndicator.css('zIndex'), 10 );
+        var breakpoint = $mqIndicator.css('fontFamily');
 
         return {
             level : z,
@@ -35,14 +35,14 @@ define('mediaQueryManager', function(require) {
         var $body = $('body');
 
         // make the indicator
-        $stateIndicator = $('<div>', {
-            class : 'state-indicator'
+        $mqIndicator = $('<div>', {
+            class : 'media-query-indicator'
         });
         // put in the body
-        $body.append($stateIndicator);
+        $body.append($mqIndicator);
 
         // empty object for comparing states later
-        var lastDeviceState = getDeviceState();
+        var lastMqState = getMediaQueryState();
 
         // throttled resize
         // you might prefer debounce
@@ -52,15 +52,15 @@ define('mediaQueryManager', function(require) {
             $.throttle( 100, function() {
 
                 // get current state
-                var state = getDeviceState();
+                var currentState = getMediaQueryState();
 
                 // compare with last state
-                if( state.level !== lastDeviceState.level ) {
+                if( currentState.level !== lastMqState.level ) {
                     // save the newest state
-                    lastDeviceState = state;
+                    lastMqState = currentState;
                     // trigger a custom mediaquery change event, with state data
                     // other modules subscribe to this
-                    $body.trigger( 'change.mq', state );
+                    $body.trigger( 'change.mq', currentState );
                 }
 
             })
@@ -68,7 +68,7 @@ define('mediaQueryManager', function(require) {
 
     });
 
-    // return getDeviceState() so you can grab it anytime
-    return getDeviceState;
+    // return getMediaQueryState() so you can grab it anytime
+    return getMediaQueryState;
 
 });
