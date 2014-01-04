@@ -36,7 +36,7 @@ define('mediaQueryManager', function(require) {
 
         // make the indicator
         $mqIndicator = $('<div>', {
-            class : 'media-query-indicator'
+            'class' : 'media-query-indicator'
         });
         // put in the body
         $body.append($mqIndicator);
